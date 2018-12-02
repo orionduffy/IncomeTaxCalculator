@@ -15,6 +15,10 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_Calculate_clicked();
+    void on_Income_returnPressed();
+
 private:
     Ui::MainWindow *ui;
 };

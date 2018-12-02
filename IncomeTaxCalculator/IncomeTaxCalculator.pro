@@ -26,10 +26,12 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    calculatetax.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    calculatetax.h
 
 FORMS += \
         mainwindow.ui
