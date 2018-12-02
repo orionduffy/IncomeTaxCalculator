@@ -15,6 +15,11 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    static void UpdateProgTax(int);
+    static void UpdateFica(int);
+    static void UpdateStateTax(int);
+    static void UpdateNetIncome(int);
+
 private slots:
     void on_Calculate_clicked();
     void on_Income_returnPressed();

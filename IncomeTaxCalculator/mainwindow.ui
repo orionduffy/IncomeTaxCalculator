@@ -165,7 +165,7 @@
     <property name="frameShadow">
      <enum>QFrame::Sunken</enum>
     </property>
-    <widget class="QLabel" name="label_8">
+    <widget class="QLabel" name="ProgressiveTax">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -194,7 +194,7 @@
     <property name="frameShadow">
      <enum>QFrame::Sunken</enum>
     </property>
-    <widget class="QLabel" name="label_9">
+    <widget class="QLabel" name="IncomeTax">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -223,7 +223,7 @@
     <property name="frameShadow">
      <enum>QFrame::Sunken</enum>
     </property>
-    <widget class="QLabel" name="label_10">
+    <widget class="QLabel" name="Fica">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -252,7 +252,7 @@
     <property name="frameShadow">
      <enum>QFrame::Sunken</enum>
     </property>
-    <widget class="QLabel" name="label_11">
+    <widget class="QLabel" name="NetIncome">
      <property name="geometry">
       <rect>
        <x>0</x>

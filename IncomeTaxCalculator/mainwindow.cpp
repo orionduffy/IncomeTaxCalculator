@@ -25,3 +25,23 @@ void MainWindow::on_Income_returnPressed()
 {
     MainWindow::on_Calculate_clicked();
 }
+
+static void MainWindow::UpdateProgTax(int tax)
+{
+    ui->ProgressiveTax->setText(tax);
+}
+
+static void MainWindow::UpdateFica(int fica)
+{
+    ui->FICA->setText(fica);
+}
+
+static void MainWindow::UpdateStateTax(int tax)
+{
+    ui->StateTax->setText(tax);
+}
+
+static void MainWindow::UpdateNetIncome(int income)
+{
+    ui->NetIncome->setText(income);
+}

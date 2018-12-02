@@ -5,12 +5,12 @@
 class CalculateTax
 {
 public:
-    CalculateTax(int Income);
+    CalculateTax(int);
 
 private:
-    int CalcProgTax(int Income);
-    int CalcFica(int Income);
-    int CalcStateTax(int Income);
+    int CalcProgTax(int);
+    int CalcFica(int);
+    int CalcStateTax(int);
 };
 
 #endif // CALCULATETAX_H
