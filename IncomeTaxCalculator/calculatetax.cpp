@@ -1,6 +1,6 @@
 #include "calculatetax.h"
 
-CalculateTax::CalculateTax(MainWindow& MainWindow, int income)
+CalculateTax::CalculateTax(Ui::MainWindow& MainWindow, int income)
 {
     int progressiveTax = CalcProgTax(income);
     MainWindow.UpdateProgTax(progressiveTax);

@@ -18,7 +18,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_Calculate_clicked()
 {
-    CalculateTax(MainWindow, (ui->Income->text().toInt()));
+    CalculateTax(ui, (ui->Income->text().toInt()));
 }
 
 void MainWindow::on_Income_returnPressed()

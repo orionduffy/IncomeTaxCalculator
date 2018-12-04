@@ -6,7 +6,7 @@
 class CalculateTax
 {
 public:
-    CalculateTax(MainWindow&, int);
+    CalculateTax(Ui::MainWindow&, int);
 
 private:
     int CalcProgTax(int);
