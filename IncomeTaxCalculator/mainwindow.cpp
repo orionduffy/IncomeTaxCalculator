@@ -18,7 +18,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_Calculate_clicked()
 {
-    CalculateTax((ui->Income->text().toInt()));
+    CalculateTax(MainWindow, (ui->Income->text().toInt()));
 }
 
 void MainWindow::on_Income_returnPressed()
@@ -26,22 +26,22 @@ void MainWindow::on_Income_returnPressed()
     MainWindow::on_Calculate_clicked();
 }
 
-static void MainWindow::UpdateProgTax(int tax)
+void MainWindow::UpdateProgTax(int tax)
 {
-    ui->ProgressiveTax->setText(tax);
+    ui->ProgressiveTax->setText(QString(tax));
 }
 
-static void MainWindow::UpdateFica(int fica)
+void MainWindow::UpdateFica(int fica)
 {
-    ui->FICA->setText(fica);
+    ui->Fica->setText(QString(fica));
 }
 
-static void MainWindow::UpdateStateTax(int tax)
+void MainWindow::UpdateStateTax(int tax)
 {
-    ui->StateTax->setText(tax);
+    ui->StateTax->setText(QString(tax));
 }
 
-static void MainWindow::UpdateNetIncome(int income)
+void MainWindow::UpdateNetIncome(int income)
 {
-    ui->NetIncome->setText(income);
+    ui->NetIncome->setText(QString(income));
 }

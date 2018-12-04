@@ -1,11 +1,12 @@
 #ifndef CALCULATETAX_H
 #define CALCULATETAX_H
 
+#include "mainwindow.h"
 
 class CalculateTax
 {
 public:
-    CalculateTax(int);
+    CalculateTax(MainWindow&, int);
 
 private:
     int CalcProgTax(int);
