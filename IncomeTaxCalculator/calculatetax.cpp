@@ -1,25 +1,24 @@
 #include "calculatetax.h"
-#include "mainwindow.h"
 
-CalculateTax::CalculateTax(int income)
+CalculateTax::CalculateTax(Ui::MainWindow& MainWindow, int income)
 {
     int progressiveTax = CalcProgTax(income);
-    MainWindow::UpdateProgTax(progressiveTax);
+    MainWindow.UpdateProgTax(progressiveTax);
 
     int fica = CalcFica(income);
-    MainWindow::UpdateFica(fica);
+    MainWindow.UpdateFica(fica);
 
     int stateTax = CalcStateTax(income);
-    MainWindow::UpdateStateTax(stateTax);
+    MainWindow.UpdateStateTax(stateTax);
 
-    MainWindow::UpdateNetIncome(income - (progressiveTax + fica + stateTax));
+    MainWindow.UpdateNetIncome(income - (progressiveTax + fica + stateTax));
 }
 
 int CalcProgTax(int income)
 {
     int progTax = 0;
     if (income < 9526){
-        progTax = income * .10;    
+        progTax = income * .10;
     }
     else if (9526 <= income && income < 38701){
         progTax = 952.50 + (income - 9525) * .12;

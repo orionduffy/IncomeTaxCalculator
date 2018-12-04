@@ -109,7 +109,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Income Tax:</string>
+     <string>State Tax</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -194,7 +194,7 @@
     <property name="frameShadow">
      <enum>QFrame::Sunken</enum>
     </property>
-    <widget class="QLabel" name="IncomeTax">
+    <widget class="QLabel" name="StateTax">
      <property name="geometry">
       <rect>
        <x>0</x>
