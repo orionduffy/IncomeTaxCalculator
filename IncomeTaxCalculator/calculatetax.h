@@ -1,17 +1,23 @@
 #ifndef CALCULATETAX_H
 #define CALCULATETAX_H
 
-#include "mainwindow.h"
 
 class CalculateTax
 {
 public:
-    CalculateTax(Ui::MainWindow&, int);
+    CalculateTax(int);
+    float GetProgTax();
+    float GetFica();
+    float GetStateTax();
 
 private:
-    int CalcProgTax(int);
-    int CalcFica(int);
-    int CalcStateTax(int);
+    float progTax;
+    float fica;
+    float stateTax;
+
+    float CalcProgTax(int);
+    float CalcFica(int);
+    float CalcStateTax(int);
 };
 
 #endif // CALCULATETAX_H

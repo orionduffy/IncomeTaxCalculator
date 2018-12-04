@@ -1,30 +1,23 @@
 #include "calculatetax.h"
 
-CalculateTax::CalculateTax(Ui::MainWindow& MainWindow, int income)
+CalculateTax::CalculateTax(int income)
 {
-    int progressiveTax = CalcProgTax(income);
-    MainWindow.UpdateProgTax(progressiveTax);
-
-    int fica = CalcFica(income);
-    MainWindow.UpdateFica(fica);
-
-    int stateTax = CalcStateTax(income);
-    MainWindow.UpdateStateTax(stateTax);
-
-    MainWindow.UpdateNetIncome(income - (progressiveTax + fica + stateTax));
+    this->progTax = CalculateTax::CalcProgTax(income);
+    this->fica = CalculateTax::CalcFica(income);
+    this->stateTax = CalculateTax::CalcStateTax(income);
 }
 
-int CalcProgTax(int income)
+float CalculateTax::CalcProgTax(int income)
 {
-    int progTax = 0;
+    float progTax = 0;
     if (income < 9526){
         progTax = income * .10;
     }
     else if (9526 <= income && income < 38701){
-        progTax = 952.50 + (income - 9525) * .12;
+        progTax = 952.50 + (income - 9525) / 120;
     }
     else if (38701 <= income && income < 82501){
-        progTax = 4486.26 + (income - 38700) * .22;
+        progTax = 4486.26 + (income - 38700) / 220;
     }
     else if (82501 <= income && income < 157501){
         progTax = 9742.26 + (income - 82500) * .24;
@@ -41,16 +34,16 @@ int CalcProgTax(int income)
     return progTax;
 }
 
-int CalcFica(int income)
+float CalculateTax::CalcFica(int income)
 {
-    int fica = 0;
+    float fica = 0;
     fica = income * .0765;
     return fica;
 }
 
-int CalcStateTax(int income)
+float CalculateTax::CalcStateTax(int income)
 {
-    int stateTax = 0;
+    float stateTax = 0;
     if (income < 10000){
         stateTax = income * .03;    
     }
@@ -73,4 +66,16 @@ int CalcStateTax(int income)
         stateTax = 31550 + (income - 499999) * .0699;
     }
     return stateTax;
+}
+
+float CalculateTax::GetProgTax(){
+    return this->progTax;
+}
+
+float CalculateTax::GetFica(){
+    return this->fica;
+}
+
+float CalculateTax::GetStateTax(){
+    return this->stateTax;
 }

@@ -15,10 +15,10 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void UpdateProgTax(int);
-    void UpdateFica(int);
-    void UpdateStateTax(int);
-    void UpdateNetIncome(int);
+    void UpdateProgTax(float);
+    void UpdateFica(float);
+    void UpdateStateTax(float);
+    void UpdateNetIncome(float);
 
 private slots:
     void on_Calculate_clicked();

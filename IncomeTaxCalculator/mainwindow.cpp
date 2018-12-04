@@ -18,7 +18,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_Calculate_clicked()
 {
-    CalculateTax(ui, (ui->Income->text().toInt()));
+    int income = ui->Income->text().toInt();
+    CalculateTax calcTax(income);
+    float progressiveTax = calcTax.GetProgTax();
+    float fica = calcTax.GetFica();
+    float stateTax = calcTax.GetStateTax();
+    MainWindow::UpdateProgTax(progressiveTax);
+    MainWindow::UpdateFica(fica);
+    MainWindow::UpdateStateTax(stateTax);
+    MainWindow::UpdateNetIncome(income - (progressiveTax + fica + stateTax));
 }
 
 void MainWindow::on_Income_returnPressed()
@@ -26,22 +34,22 @@ void MainWindow::on_Income_returnPressed()
     MainWindow::on_Calculate_clicked();
 }
 
-void MainWindow::UpdateProgTax(int tax)
+void MainWindow::UpdateProgTax(float tax)
 {
-    ui->ProgressiveTax->setText(QString(tax));
+    ui->ProgressiveTax->setText(QString::number(tax));
 }
 
-void MainWindow::UpdateFica(int fica)
+void MainWindow::UpdateFica(float fica)
 {
-    ui->Fica->setText(QString(fica));
+    ui->Fica->setText(QString::number(fica));
 }
 
-void MainWindow::UpdateStateTax(int tax)
+void MainWindow::UpdateStateTax(float tax)
 {
-    ui->StateTax->setText(QString(tax));
+    ui->StateTax->setText(QString::number(tax));
 }
 
-void MainWindow::UpdateNetIncome(int income)
+void MainWindow::UpdateNetIncome(float income)
 {
-    ui->NetIncome->setText(QString(income));
+    ui->NetIncome->setText(QString::number(income));
 }
