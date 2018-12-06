@@ -14,10 +14,10 @@ float CalculateTax::CalcProgTax(int income)
         progTax = income * .10;
     }
     else if (9526 <= income && income < 38701){
-        progTax = 952.50 + (income - 9525) / 120;
+        progTax = 952.50 + (income - 9525) * .12;
     }
     else if (38701 <= income && income < 82501){
-        progTax = 4486.26 + (income - 38700) / 220;
+        progTax = 4486.26 + (income - 38700) * .22;
     }
     else if (82501 <= income && income < 157501){
         progTax = 9742.26 + (income - 82500) * .24;
